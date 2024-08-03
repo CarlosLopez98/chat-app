@@ -1,13 +1,14 @@
 const Chat = require("../models/chat.model")
 const Message = require("../models/message.model")
 const { Op } = require('sequelize')
+const { getRecieverSocketId, io } = require("../socket/socket")
 
 const getMessages = async (req, res) => {
   try {
     const { id: userToChatId } = req.params
     const senderId = req.user.id
 
-    const chat = await Chat.findOne({
+    let chat = await Chat.findOne({
       where: {
         [Op.or]: [
           {
@@ -25,7 +26,7 @@ const getMessages = async (req, res) => {
     if (!chat) {
       chat = await Chat.create({
         user1_id: senderId,
-        user2_id: recieverId
+        user2_id: userToChatId
       })
       return res.status(200).json({ messages: [] })
     }
@@ -84,6 +85,11 @@ const sendMessage = async (req, res) => {
     await newMessage.save()
 
     // Socket io go here
+    // SOCKET
+    const receiverSocketId = getRecieverSocketId(recieverId)
+    if (receiverSocketId) {
+      io.to(receiverSocketId).emit('newMessage', newMessage)
+    }
 
     res.status(201).json(newMessage)
   } catch (e) {
