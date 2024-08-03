@@ -11,8 +11,10 @@ const sequelize = new Sequelize(
   password,
   {
     host,
-    dialect: "mysql"
-  }
+    dialect: "mysql",
+    logging: false,
+    timezone: '-05:00'
+  },
 )
 
 module.exports = sequelize
