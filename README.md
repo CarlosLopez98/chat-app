@@ -9,8 +9,6 @@ A real-time chat application with a modern UI, designed to facilitate seamless c
 - Real-time messaging
 - Persistent message history
 
----
-
 ## 🚀 Technologies Used
 
 - **Backend**: Node.js, Express
@@ -18,8 +16,6 @@ A real-time chat application with a modern UI, designed to facilitate seamless c
 - **Database**: MongoDB / PostgreSQL / SQLite
 - **Frontend**: React + Material UI (or similar)
 - **Others**: JWT for authentication, dotenv for configuration
-
----
 
 ## 📥 Installation
 
@@ -58,8 +54,6 @@ A real-time chat application with a modern UI, designed to facilitate seamless c
 
 5. Open your browser at `http://localhost:3000` to see the app in action.
 
----
-
 ## 📁 Project Structure
 
 ```
@@ -79,22 +73,6 @@ chat-app/
 └── package.json
 ```
 
----
-
-## ✅ Tests
-
-Tests are recommended using Jest, Mocha, Chai or similar:
-
-- Unit tests for message logic
-- Integration tests for authentication and protected routes
-
-Run tests:
-```bash
-npm test
-```
-
----
-
 ## 📄 License
 
 This project is licensed under the [MIT License](LICENSE).
@@ -104,9 +82,3 @@ This project is licensed under the [MIT License](LICENSE).
 ## 📬 Contact
 
 For questions or suggestions, feel free to open an issue on GitHub.
-```
-3. Run client
-```
-cd frontend
-npm run dev
-```
