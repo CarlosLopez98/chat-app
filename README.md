@@ -77,8 +77,6 @@ chat-app/
 
 This project is licensed under the [MIT License](LICENSE).
 
----
-
 ## 📬 Contact
 
 For questions or suggestions, feel free to open an issue on GitHub.
